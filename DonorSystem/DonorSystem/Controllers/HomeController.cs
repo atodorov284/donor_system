@@ -77,7 +77,7 @@ namespace DonorSystem.Controllers
             {
                 Console.Write("Name: ");
                 string name = Console.ReadLine();
-                if (!name.All(char.IsLetter) || name.Length < 2)
+                if (name.Any(char.IsSymbol) || name.Any(char.IsDigit) || name.Length < 2)
                 {
                     Console.WriteLine("Name cannot contain other symbols or be less than 2 letters.");
                     Console.WriteLine("Press any key to return.");
@@ -95,7 +95,7 @@ namespace DonorSystem.Controllers
                 }
                 Console.Write("Blood group: ");
                 string bloodGroup = Console.ReadLine();
-                if (bloodGroup[0] != 'A' || bloodGroup[0] != 'B' || bloodGroup[1] != '+' || bloodGroup[1] != '-')
+                if (!(bloodGroup[0] != 'A' || bloodGroup[0] != 'B') && !(bloodGroup[1] != '+' || bloodGroup[1] != '-'))
                 {
                     Console.WriteLine("Enter a valid blood group.");
                     Console.WriteLine("Press any key to return.");
