@@ -46,20 +46,62 @@ namespace DonorSystem.DAO
             }
         }
 
+        private bool EmailExists(string email, bool isDonor)
+        {
+            if (isDonor)
+            {
+                var existingUser = this.context.Donors
+                .Where(d => d.Email.Equals(email))
+                .FirstOrDefault();
+                if(existingUser == null)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                var existingUser = this.context.Patients
+                .Where(d => d.Email.Equals(email))
+                .FirstOrDefault();
+                if (existingUser == null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public void DonorRegister(Donors donor)
         {
-            context.Donors.Add(donor);
-            context.SaveChanges();
-            Console.WriteLine("Register successful! Redirecting...");
-            DonorLogin(donor.Email, donor.Password);
+            if (!EmailExists(donor.Email, true)) 
+            {
+                context.Donors.Add(donor);
+                context.SaveChanges();
+                Console.WriteLine("Register successful! Redirecting...");
+                DonorLogin(donor.Email, donor.Password);
+            }
+            else
+            {
+                Console.WriteLine("Email already in use. Please use a different email.");
+                System.Threading.Thread.Sleep(1500);
+            }
         }
 
         public void PatientRegister(Patients patient)
         {
-            context.Patients.Add(patient);
-            context.SaveChanges();
-            Console.WriteLine("Register successful! Redirecting...");
-            PatientLogin(patient.Email, patient.Password);
+            if (!EmailExists(patient.Email, false)) 
+            {
+                context.Patients.Add(patient);
+                context.SaveChanges();
+                Console.WriteLine("Register successful! Redirecting...");
+                PatientLogin(patient.Email, patient.Password);
+            }
+            else
+            {
+                Console.WriteLine("Email already in use. Please use a different email.");
+                System.Threading.Thread.Sleep(1500);
+            }
+            
         }
 
         public HomeDAO()
