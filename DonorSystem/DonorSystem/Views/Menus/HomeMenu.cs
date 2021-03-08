@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using System.Text;
 using DonorSystem.Controllers;
@@ -107,8 +108,28 @@ namespace DonorSystem.Views
             } while (role != 1 && role != 2);
             Console.Write("Email: ");
             string email = Console.ReadLine();
+            try
+            {
+                if (!ValidateEmail(email)) throw new Exception("Invalid email");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Press any key to return.");
+                Console.ReadKey();
+                return;
+            }
             Console.Write("Password:");
             string password = HashPassword(Console.ReadLine());
+            Console.Write("Repeat password: ");
+            string repeatedPassword = HashPassword(Console.ReadLine());
+            if (password != repeatedPassword)
+            {
+                Console.WriteLine("Password mismatch.");
+                Console.WriteLine("Press any key to return.");
+                Console.ReadKey();
+                return;
+            }
             homeController.Register(email, password, role);
         }
 
@@ -122,6 +143,11 @@ namespace DonorSystem.Views
         private void ShowUsefulInfo()
         {
             homeController.ShowUsefulInfo();
+        }
+
+        private bool ValidateEmail(string email)
+        {
+            return new EmailAddressAttribute().IsValid(email);
         }
 
     }
