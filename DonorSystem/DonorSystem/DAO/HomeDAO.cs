@@ -20,8 +20,8 @@ namespace DonorSystem.DAO
             if (donor == null)
             {
                 Console.WriteLine("Invalid credentials.");
-                Console.WriteLine("Redirecting to main menu...");
-                System.Threading.Thread.Sleep(1300);
+                Console.WriteLine("Press any key to return.");
+                Console.ReadKey();
             }
             else
             {
@@ -37,8 +37,8 @@ namespace DonorSystem.DAO
             if (patient == null)
             {
                 Console.WriteLine("Invalid credentials.");
-                Console.WriteLine("Redirecting to main menu...");
-                System.Threading.Thread.Sleep(1300);
+                Console.WriteLine("Press any key to return.");
+                Console.ReadKey();
             }
             else
             {
@@ -83,7 +83,8 @@ namespace DonorSystem.DAO
             else
             {
                 Console.WriteLine("Email already in use. Please use a different email.");
-                System.Threading.Thread.Sleep(1500);
+                Console.WriteLine("Press any key to return.");
+                Console.ReadKey();
             }
         }
 
@@ -99,7 +100,8 @@ namespace DonorSystem.DAO
             else
             {
                 Console.WriteLine("Email already in use. Please use a different email.");
-                System.Threading.Thread.Sleep(1500);
+                Console.WriteLine("Press any key to return.");
+                Console.ReadKey();
             }
             
         }

@@ -39,7 +39,7 @@ namespace DonorSystem.Controllers
             Console.WriteLine($"We hope your {patient.Diagnose} will be cured. Your account will be deleted now.");
             Console.WriteLine("If you receive blood again you can register at any time.");
             patientsDAO.DeletePatient(patient);
-            Console.WriteLine("Press any key to return to the main menu.");
+            Console.WriteLine("Press any key to return.");
         }
     }
 }

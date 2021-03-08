@@ -26,7 +26,7 @@ namespace DonorSystem.Views
             else
             {
                 Console.WriteLine("You are enrolled in the program. Patients will connect with you soon.");
-                Console.WriteLine("Press any key to return to main menu.");
+                Console.WriteLine("Press any key to return.");
                 Console.ReadKey();
             }
         }

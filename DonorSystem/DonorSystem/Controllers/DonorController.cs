@@ -32,14 +32,14 @@ namespace DonorSystem.Controllers
             {
                 donorsDAO.ChangeDonorStatus(donor);
                 Console.WriteLine("You've successfully enrolled in the program again. ");
-                Console.WriteLine("Press any key to return to the main menu.");
+                Console.WriteLine("Press any key to return.");
                 Console.ReadKey();
             }
             else
             {
                 donorsDAO.DeleteDonor(donor);
                 Console.WriteLine("You've successfully unenrolled from the program. You may return back at any time.");
-                Console.WriteLine("Press any key to return to the main menu.");
+                Console.WriteLine("Press any key to return.");
                 Console.ReadKey();
             }
         }
