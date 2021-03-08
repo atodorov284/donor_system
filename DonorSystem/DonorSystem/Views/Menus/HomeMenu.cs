@@ -119,10 +119,17 @@ namespace DonorSystem.Views
                 Console.ReadKey();
                 return;
             }
-            Console.Write("Password:");
-            string password = HashPassword(Console.ReadLine());
+            Console.Write("Password: ");
+            string password = Console.ReadLine();
+            if (password.Length < 6) 
+            {
+                Console.WriteLine("Password must be atleast 6 symbols.");
+                Console.WriteLine("Press any key to return.");
+                Console.ReadKey();
+                return;
+            }
             Console.Write("Repeat password: ");
-            string repeatedPassword = HashPassword(Console.ReadLine());
+            string repeatedPassword = Console.ReadLine();
             if (password != repeatedPassword)
             {
                 Console.WriteLine("Password mismatch.");
@@ -130,6 +137,7 @@ namespace DonorSystem.Views
                 Console.ReadKey();
                 return;
             }
+            password = HashPassword(password);
             homeController.Register(email, password, role);
         }
 
@@ -149,6 +157,5 @@ namespace DonorSystem.Views
         {
             return new EmailAddressAttribute().IsValid(email);
         }
-
     }
 }
