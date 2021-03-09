@@ -14,6 +14,7 @@ namespace DonorSystem.Controllers
 
         public void ShowUsefulInfo()
         {
+            Console.Clear();
             Console.WriteLine("Websites that may be useful to donors and patients: ");
             websitesDAO.ShowAll();
             Console.WriteLine("Press any key to return.");
@@ -104,7 +105,7 @@ namespace DonorSystem.Controllers
                 }
                 Console.Write("Diagnose: ");
                 string diagnose = Console.ReadLine();
-                if (diagnose.Length < 3 || !diagnose.All(char.IsLetter))
+                if (diagnose.Length < 3 || name.Any(char.IsSymbol) || name.Any(char.IsDigit))
                 {
                     Console.WriteLine("Diagnose cannot be less than 3 symbols and must be all letters.");
                     Console.WriteLine("Press any key to return.");
