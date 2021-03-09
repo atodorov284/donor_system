@@ -17,7 +17,6 @@ namespace DonorSystem.DAO
         public void ShowAll()
         {
             List<Websites> websites = context.Websites.ToList();
-            Console.Clear();
             for (int i = 0; i < websites.Count; i++)
             {
                 Console.WriteLine($"{i+1}. {websites[i].Name} {websites[i].Description}");
