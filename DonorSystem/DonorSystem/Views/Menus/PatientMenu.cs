@@ -8,16 +8,29 @@ using DonorSystem.Controllers;
 
 namespace DonorSystem.Views
 {
+    /// <summary>
+    /// Отговаря за менюто с пациентите от конзолния интерфейс,
+    /// може да се достигне от началното меню.
+    /// </summary>
     class PatientMenu
     {
         PatientController patientController;
-        public PatientMenu(Patients patient)
+
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
+        /// <param name="patient"></param>
+        public PatientMenu(Patient patient)
         {
             patientController = new PatientController();
             ShowPatientMenu(patient);
         }
 
-        public void ShowPatientMenu(Patients patient)
+        /// <summary>
+        /// Приветства успешно влезлия потребител(пациент).
+        /// </summary>
+        /// <param name="patient"></param>
+        public void ShowPatientMenu(Patient patient)
         {
             int donors = 15;
             Console.WriteLine($"Login successful! Welcome {patient.Name}.");

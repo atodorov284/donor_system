@@ -15,14 +15,14 @@ namespace DonorSystem.DAO
             context = new DonorDBContext();
         }
 
-        public List<Donors> FindCompatibleDonors(Patients patient)
+        public List<Donor> FindCompatibleDonors(Patient patient)
         {
             string bloodGroup = patient.BloodGroup;
-            List<Donors> potentialDonors = context.Donors.Where(d => d.BloodGroup == bloodGroup || d.BloodGroup == $"0{bloodGroup[1]}").ToList();
+            List<Donor> potentialDonors = context.Donors.Where(d => d.BloodGroup == bloodGroup || d.BloodGroup == $"0{bloodGroup[1]}").ToList();
             return potentialDonors;
         }
 
-        public void DeletePatient(Patients patient)
+        public void DeletePatient(Patient patient)
         {
             var patientToDelete = context.Patients.First(p => p.PatientId == patient.PatientId);
             context.Patients.Remove(patientToDelete);

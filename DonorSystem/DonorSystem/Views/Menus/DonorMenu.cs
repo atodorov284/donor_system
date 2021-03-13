@@ -7,16 +7,30 @@ using DonorSystem.Controllers;
 
 namespace DonorSystem.Views
 {
+
+    /// <summary>
+    /// Отговаря за менюто с дарителите от конзолния интерфейс,
+    /// може да се достигне от началното меню.
+    /// </summary>
     class DonorMenu
     {
         DonorController donorController;
-        public DonorMenu(Donors donor)
+
+        /// <summary>
+        /// Конструктор. 
+        /// </summary>
+        /// <param name="donor"></param>
+        public DonorMenu(Donor donor)
         {
             donorController = new DonorController();
             ShowDonorMenu(donor);
         }
 
-        private void ShowDonorMenu(Donors donor)
+        /// <summary>
+        /// Приветства успешно влезлия потребител(дарител).
+        /// </summary>
+        /// <param name="donor"></param>
+        private void ShowDonorMenu(Donor donor)
         {
             Console.WriteLine($"Login successful! Welcome {donor.Name}.");
             if (donor.Status != "Available")

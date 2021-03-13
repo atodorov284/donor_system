@@ -7,19 +7,31 @@ using System.Linq;
 
 namespace DonorSystem.Controllers
 {
+    /// <summary>
+    /// Управлява базата от данни с пациентите и операциите, свързани с нея.
+    /// </summary>
     class PatientController
     {
         PatientsDAO patientsDAO;
         DonorsDAO donorsDAO;
+
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
         public PatientController()
         {
             patientsDAO = new PatientsDAO();
             donorsDAO = new DonorsDAO();
         }
 
-        public void ShowPotentialDonors(Patients patient, int numberOfDonors)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="patient"></param>
+        /// <param name="numberOfDonors"></param>
+        public void ShowPotentialDonors(Patient patient, int numberOfDonors)
         {
-            List<Donors> potentialDonors = patientsDAO.FindCompatibleDonors(patient);
+            List<Donor> potentialDonors = patientsDAO.FindCompatibleDonors(patient);
             potentialDonors = potentialDonors.OrderBy(d => d.BloodGroup).Take(numberOfDonors).ToList();
             Console.WriteLine($"Here are all the donors compatible with your blood group {patient.BloodGroup} and their phone numbers.");
             for (int i = 0; i < potentialDonors.Count; i++)
@@ -33,7 +45,7 @@ namespace DonorSystem.Controllers
             {
                 donorIndex = int.Parse(Console.ReadLine());
             } while (donorIndex <= 0 && donorIndex > numberOfDonors);
-            Donors donatingDonor = potentialDonors[donorIndex - 1];
+            Donor donatingDonor = potentialDonors[donorIndex - 1];
             donorsDAO.TransfuseBlood(donatingDonor, patient);
             Console.WriteLine($"You successfully received blood from {donatingDonor.Name}. You can call him to thank.");
             Console.WriteLine($"We hope your {patient.Diagnose} will be cured. Your account will be deleted now.");

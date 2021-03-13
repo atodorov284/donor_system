@@ -71,7 +71,7 @@ namespace DonorSystem.DAO
             return true;
         }
 
-        public void DonorRegister(Donors donor)
+        public void DonorRegister(Donor donor)
         {
             if (!EmailExists(donor.Email, true)) 
             {
@@ -88,7 +88,7 @@ namespace DonorSystem.DAO
             }
         }
 
-        public void PatientRegister(Patients patient)
+        public void PatientRegister(Patient patient)
         {
             if (!EmailExists(patient.Email, false)) 
             {

@@ -6,15 +6,26 @@ using DonorSystem.Models;
 
 namespace DonorSystem.Controllers
 {
+    /// <summary>
+    /// Управлява базата данни с дарителите и операциите, свързани с нея.
+    /// </summary>
     class DonorController
     {
         DonorsDAO donorsDAO;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DonorController()
         {
             donorsDAO = new DonorsDAO();
         }
 
-        public void DonorInteractions(Donors donor)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="donor"></param>
+        public void DonorInteractions(Donor donor)
         {
             Console.WriteLine($"Congratulations! {donor.Status} accepted your generous gesture and you donated your blood to him.");
             Console.WriteLine("Do you wish to enroll to donate blood again or leave the blood donation program?");

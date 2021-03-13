@@ -3,7 +3,10 @@ using System.Collections.Generic;
 
 namespace DonorSystem.Models
 {
-    public partial class Websites
+    /// <summary>
+    /// Данни за уебсайт
+    /// </summary>
+    public partial class Website
     {
         public int WebsiteId { get; set; }
         public string Name { get; set; }

@@ -5,9 +5,12 @@ using DonorSystem.Models;
 
 namespace DonorSystem
 {
+    /// <summary>
+    /// Основния клас, който обменя данни с базата данни.
+    /// </summary>
     public partial class DonorDBContext : DbContext
     {
-        public DonorDBContext()
+        public DonorDBContext() //empty constructor
         {
         }
 
@@ -16,22 +19,42 @@ namespace DonorSystem
         {
         }
 
-        public virtual DbSet<Donors> Donors { get; set; }
-        public virtual DbSet<Patients> Patients { get; set; }
-        public virtual DbSet<Websites> Websites { get; set; }
+        /// <summary>
+        /// Списък с дарителите.
+        /// </summary>
+        public virtual DbSet<Donor> Donors { get; set; }
+        /// <summary>
+        /// Списък с пациентите.
+        /// </summary>
+        public virtual DbSet<Patient> Patients { get; set; }
+        /// <summary>
+        /// Списък с уебсайтовете.
+        /// </summary>
+        public virtual DbSet<Website> Websites { get; set; }
 
+        /// <summary>
+        /// Свързва се към MySQL сървъра с адрес 127.0.0.1(localhost),
+        /// име на потребител admin,
+        /// парола passwords,
+        /// база от данни с име donor_system
+        /// </summary>
+        /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseMySQL("Server=127.0.0.1;Database=donor_system;uID=admin;pwd=password;persistsecurityInfo=True");
             }
         }
 
+        /// <summary>
+        /// Създава нов модел.
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Donors>(entity =>
+            modelBuilder.Entity<Donor>(entity =>
             {
                 entity.HasKey(e => e.DonorId)
                     .HasName("PRIMARY");
@@ -65,7 +88,7 @@ namespace DonorSystem
                     .HasMaxLength(45);
             });
 
-            modelBuilder.Entity<Patients>(entity =>
+            modelBuilder.Entity<Patient>(entity =>
             {
                 entity.HasKey(e => e.PatientId)
                     .HasName("PRIMARY");
@@ -99,7 +122,7 @@ namespace DonorSystem
                     .HasMaxLength(10);
             });
 
-            modelBuilder.Entity<Websites>(entity =>
+            modelBuilder.Entity<Website>(entity =>
             {
                 entity.HasKey(e => e.WebsiteId)
                     .HasName("PRIMARY");

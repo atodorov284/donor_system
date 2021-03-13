@@ -14,21 +14,21 @@ namespace DonorSystem.DAO
             context = new DonorDBContext();
         }
 
-        public void ChangeDonorStatus(Donors donor)
+        public void ChangeDonorStatus(Donor donor)
         {
             var updatedDonor = context.Donors.First(d => d.DonorId == donor.DonorId);
             updatedDonor.Status = "Available";
             context.SaveChanges();
         }
 
-        public void DeleteDonor(Donors donor)
+        public void DeleteDonor(Donor donor)
         {
             var donorToDelete = context.Donors.First(d => d.DonorId == donor.DonorId);
             context.Donors.Remove(donorToDelete);
             context.SaveChanges();
         }
 
-        public void TransfuseBlood(Donors donatingDonor, Patients receivingPatient)
+        public void TransfuseBlood(Donor donatingDonor, Patient receivingPatient)
         {
             var updatedDonor = context.Donors.First(d => d.DonorId == donatingDonor.DonorId);
             updatedDonor.Status = $"{receivingPatient.Name}";

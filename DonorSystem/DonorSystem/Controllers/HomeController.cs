@@ -7,11 +7,18 @@ using DonorSystem.Models;
 
 namespace DonorSystem.Controllers
 {
+    /// <summary>
+    /// Управлява базата от данни с уебсайтовете, както и системата за вход/изход
+    /// заедно с услугите, предоставени от конзолния интерфейс.
+    /// </summary>
     class HomeController
     {
         HomeDAO homeDAO;
         WebsitesDAO websitesDAO;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void ShowUsefulInfo()
         {
             Console.Clear();
@@ -21,6 +28,12 @@ namespace DonorSystem.Controllers
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="role"></param>
         public void Login(string email, string password, int role)
         {
             if (role == 1)
@@ -33,6 +46,12 @@ namespace DonorSystem.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="role"></param>
         public void Register(string email, string password, int role)
         {
             if (role == 1)
@@ -65,7 +84,7 @@ namespace DonorSystem.Controllers
                     Console.ReadKey();
                     return;
                 }
-                Donors donor = new Donors();
+                Donor donor = new Donor();
                 donor.Email = email;
                 donor.Password = password;
                 donor.Name = name;
@@ -113,7 +132,7 @@ namespace DonorSystem.Controllers
                     return;
                 }
 
-                Patients patient = new Patients();
+                Patient patient = new Patient();
                 patient.Email = email;
                 patient.Password = password;
                 patient.Name = name;
@@ -124,6 +143,9 @@ namespace DonorSystem.Controllers
             }
         }
 
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
         public HomeController()
         {
             homeDAO = new HomeDAO();

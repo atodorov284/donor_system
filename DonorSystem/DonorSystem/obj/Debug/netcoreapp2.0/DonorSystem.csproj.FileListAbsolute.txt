@@ -1,0 +1,12 @@
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\bin\Debug\netcoreapp2.0\DonorSystem.deps.json
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\bin\Debug\netcoreapp2.0\DonorSystem.runtimeconfig.json
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\bin\Debug\netcoreapp2.0\DonorSystem.runtimeconfig.dev.json
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\bin\Debug\netcoreapp2.0\DonorSystem.dll
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\bin\Debug\netcoreapp2.0\DonorSystem.pdb
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp2.0\DonorSystem.csprojAssemblyReference.cache
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp2.0\DonorSystem.AssemblyInfoInputs.cache
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp2.0\DonorSystem.AssemblyInfo.cs
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp2.0\DonorSystem.csproj.CoreCompileInputs.cache
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp2.0\DonorSystem.dll
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp2.0\DonorSystem.pdb
+D:\Documents2\REPOS\atodorov284\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp2.0\DonorSystem.genruntimeconfig.cache
