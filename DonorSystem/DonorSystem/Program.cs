@@ -5,9 +5,9 @@ namespace DonorSystem
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            HomeMenu homeMenu = new HomeMenu();
+            new HomeMenu();
         }
     }
 }

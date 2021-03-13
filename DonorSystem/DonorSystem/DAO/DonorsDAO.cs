@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using DonorSystem.Models;
 using System.Linq;
 
@@ -8,7 +6,7 @@ namespace DonorSystem.DAO
 {
     class DonorsDAO
     {
-        DonorDBContext context;
+        readonly DonorDBContext context;
         public DonorsDAO()
         {
             context = new DonorDBContext();

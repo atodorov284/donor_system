@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using DonorSystem.DAO;
 using DonorSystem.Models;
 
@@ -8,7 +6,7 @@ namespace DonorSystem.Controllers
 {
     class DonorController
     {
-        DonorsDAO donorsDAO;
+        readonly DonorsDAO donorsDAO;
         public DonorController()
         {
             donorsDAO = new DonorsDAO();
@@ -21,7 +19,7 @@ namespace DonorSystem.Controllers
             Console.WriteLine("1. I wish to enroll again.");
             Console.WriteLine("2. I want to leave the program.");
 
-            int command = 0;
+            int command;
             do
             {
                 if (!int.TryParse(Console.ReadLine(), out command)) throw new FormatException("Value must be an integer.");

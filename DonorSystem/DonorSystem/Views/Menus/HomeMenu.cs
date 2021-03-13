@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using System.Text;
 using DonorSystem.Controllers;
@@ -10,7 +8,7 @@ namespace DonorSystem.Views
     class HomeMenu
     {
         private const int Exit = 4;
-        HomeController homeController;
+        readonly HomeController homeController;
         public HomeMenu()
         {
             homeController = new HomeController();
@@ -56,8 +54,6 @@ namespace DonorSystem.Views
                         break;
                     case 3:
                         ShowUsefulInfo();
-                        break;
-                    default:
                         break;
                 }
             } while (command != Exit);
@@ -111,26 +107,29 @@ namespace DonorSystem.Views
             try
             {
                 if (!ValidateEmail(email)) throw new Exception("Invalid email");
+                if (ExistingEmail(email, role)) throw new Exception("Email already in use.");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine("Press any key to return.");
                 Console.ReadKey();
                 return;
             }
+
             Console.Write("Password: ");
             string password = Console.ReadLine();
-            if (password.Length < 6) 
+
+            if (!ValidatePassword(password)) 
             {
-                Console.WriteLine("Password must be atleast 6 symbols.");
+                Console.WriteLine("Password must be at least 6 symbols.");
                 Console.WriteLine("Press any key to return.");
                 Console.ReadKey();
                 return;
             }
             Console.Write("Repeat password: ");
             string repeatedPassword = Console.ReadLine();
-            if (password != repeatedPassword)
+            if (!PasswordMatch(password, repeatedPassword))
             {
                 Console.WriteLine("Password mismatch.");
                 Console.WriteLine("Press any key to return.");
@@ -153,9 +152,25 @@ namespace DonorSystem.Views
             homeController.ShowUsefulInfo();
         }
 
+        private bool ValidatePassword(string password)
+        {
+            return homeController.ValidatePassword(password);
+        }
+
         private bool ValidateEmail(string email)
         {
-            return new EmailAddressAttribute().IsValid(email);
+            return homeController.ValidateEmail(email);
+        }
+
+        private bool PasswordMatch(string password, string repeated)
+        {
+            return password == repeated;
+        }
+
+        private bool ExistingEmail(string email, int role)
+        {
+            bool isDonor = role == 1;
+            return homeController.ExistingEmail(email, isDonor);
         }
     }
 }

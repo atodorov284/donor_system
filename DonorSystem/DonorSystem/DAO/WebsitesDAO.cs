@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using DonorSystem.Models;
 using System.Linq;
 
@@ -8,7 +7,7 @@ namespace DonorSystem.DAO
 {
     class WebsitesDAO
     {
-        DonorDBContext context;
+        readonly DonorDBContext context;
         public WebsitesDAO()
         {
             context = new DonorDBContext();

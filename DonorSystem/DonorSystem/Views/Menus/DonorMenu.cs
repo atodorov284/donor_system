@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using DonorSystem.Models;
-using DonorSystem.DAO;
 using DonorSystem.Controllers;
 
 namespace DonorSystem.Views
 {
     class DonorMenu
     {
-        DonorController donorController;
+        readonly DonorController donorController;
         public DonorMenu(Donors donor)
         {
             donorController = new DonorController();

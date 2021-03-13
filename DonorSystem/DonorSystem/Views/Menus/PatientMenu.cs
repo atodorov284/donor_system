@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using DonorSystem.Models;
-using DonorSystem.DAO;
-using System.Linq;
 using DonorSystem.Controllers;
 
 namespace DonorSystem.Views
 {
     class PatientMenu
     {
-        PatientController patientController;
+        readonly PatientController patientController;
         public PatientMenu(Patients patient)
         {
             patientController = new PatientController();
@@ -28,7 +24,7 @@ namespace DonorSystem.Views
                 Console.Write("Number of donors: ");
                 donors = int.Parse(Console.ReadLine());
             } while (donors >= 15);
-            patientController.ShowPotentialDonors(patient, donors);
+            patientController.ReceiveBlood(patient, donors);
             Console.ReadKey();
         }
 
