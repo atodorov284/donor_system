@@ -21,9 +21,19 @@ namespace DonorSystem.Views
             Console.WriteLine("If the number you type is greater than what we have, only the available will be shown.");
             do
             {
-                Console.Write("Number of donors: ");
-                donors = int.Parse(Console.ReadLine());
+                try
+                {
+                    
+                    Console.Write("Number of donors: ");
+                    if (!int.TryParse(Console.ReadLine(), out donors)) throw new FormatException("Value must be an integer. Try again.");
+                }
+                catch (FormatException e)
+                {
+                    donors = 15;
+                    Console.WriteLine(e.Message);
+                }
             } while (donors >= 15);
+            
             patientController.ReceiveBlood(patient, donors);
             Console.ReadKey();
         }
