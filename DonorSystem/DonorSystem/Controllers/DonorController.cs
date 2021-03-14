@@ -7,11 +7,16 @@ namespace DonorSystem.Controllers
     class DonorController
     {
         readonly DonorsDAO donorsDAO;
+
+        /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.Controllers.DonorController" /> class and encapsulates the logic for the donor role.</summary>
         public DonorController()
         {
             donorsDAO = new DonorsDAO();
         }
 
+        /// <summary>Displays the possible options after a donor's blood has been received.</summary>
+        /// <param name="donor">The donor.</param>
+        /// <exception cref="FormatException">Value must be an integer.</exception>
         public void DonorInteractions(Donors donor)
         {
             Console.WriteLine($"Congratulations! {donor.Status} accepted your generous gesture and you donated your blood to him.");
@@ -28,7 +33,7 @@ namespace DonorSystem.Controllers
 
             if (command == 1)
             {
-                donorsDAO.ChangeDonorStatus(donor);
+                donorsDAO.EnrollAgain(donor);
                 Console.WriteLine("You've successfully enrolled in the program again. ");
                 Console.WriteLine("Press any key to return.");
                 Console.ReadKey();
@@ -36,7 +41,7 @@ namespace DonorSystem.Controllers
             else
             {
                 donorsDAO.DeleteDonor(donor);
-                Console.WriteLine("You've successfully unenrolled from the program. You may return back at any time.");
+                Console.WriteLine("You've successfully unrolled from the program. You may return back at any time.");
                 Console.WriteLine("Press any key to return.");
                 Console.ReadKey();
             }

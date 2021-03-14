@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DonorSystem</name>
+    </assembly>
+    <members>
+        <member name="F:DonorSystem.Views.HomeMenu.Exit">
+            <summary>The exit value used to exit the <see cref="M:DonorSystem.Views.HomeMenu.Input"/> method.</summary>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.Views.HomeMenu" /> class and starts the whole program.</summary>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ShowMenu">
+            <summary>Displays main menu.</summary>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.Input">
+            <summary>Gets user input, validates and displays main menu.</summary>
+            <exception cref="T:System.FormatException">Value must be an integer.</exception>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.Login">
+            <summary>Gets user information, validates and calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to login the user.</summary>
+            <exception cref="T:System.FormatException">Value must be an integer.</exception>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.Register">
+            <summary>Gets user email and password, validates, and calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to register user.</summary>
+            <exception cref="T:System.FormatException">Value must be an integer.</exception>
+            <exception cref="T:System.Exception">Invalid email</exception>
+            <exception cref="T:System.Exception">Email already in use.</exception>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.HashPassword(System.String)">
+            <summary>Hashes the password.</summary>
+            <param name="password">The password.</param>
+            <returns>Hashed password</returns>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ShowUsefulInfo">
+            <summary>Calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to show useful websites.</summary>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ValidatePassword(System.String)">
+            <summary>Calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to validate the password.</summary>
+            <param name="password">The password.</param>
+            <returns>
+              <c>true</c> if password is valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ValidateEmail(System.String)">
+            <summary>Calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to validate the email.</summary>
+            <param name="email">The email.</param>
+            <returns>
+              <c>true</c> if email is valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.PasswordMatch(System.String,System.String)">
+            <summary>Checks if the passwords match.</summary>
+            <param name="password">The password.</param>
+            <param name="repeated">The repeated password.</param>
+            <returns>
+              <c>true</c> if equal, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ExistingEmail(System.String,System.Int32)">
+            <summary>Calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to see if the email already exists based on the role.</summary>
+            <param name="email">The email.</param>
+            <param name="role">The role.</param>
+            <returns>
+              <c>true</c> if exists, <c>false</c> otherwise.</returns>
+        </member>
+    </members>
+</doc>

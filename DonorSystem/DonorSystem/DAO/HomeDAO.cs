@@ -8,6 +8,16 @@ namespace DonorSystem.DAO
     class HomeDAO
     {
         readonly DonorDBContext context;
+
+        /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.DAO.HomeDAO" /> class and registers/logins the users.</summary>
+        public HomeDAO()
+        {
+            context = new DonorDBContext();
+        }
+
+        /// <summary>Checks for valid credential and logs the donor in.</summary>
+        /// <param name="email">The email.</param>
+        /// <param name="password">The password.</param>
         public void DonorLogin(string email, string password)
         {
             var donor = this.context.Donors
@@ -24,6 +34,9 @@ namespace DonorSystem.DAO
             }
         }
 
+        /// <summary>Checks for valid credential and logs the patient in.</summary>
+        /// <param name="email">The email.</param>
+        /// <param name="password">The password.</param>
         public void PatientLogin(string email, string password)
         {
             var patient = this.context.Patients
@@ -40,6 +53,11 @@ namespace DonorSystem.DAO
             }
         }
 
+        /// <summary>Checks if email already exists based on the role</summary>
+        /// <param name="email">The email.</param>
+        /// <param name="isDonor">if set to <c>true</c> [is donor].</param>
+        /// <returns>
+        ///   <c>true</c> if email already exists, <c>false</c> otherwise.</returns>
         public bool ExistingEmail(string email, bool isDonor)
         {
             if (isDonor)
@@ -63,6 +81,8 @@ namespace DonorSystem.DAO
             return true;
         }
 
+        /// <summary>Registers the donor.</summary>
+        /// <param name="donor">The donor.</param>
         public void DonorRegister(Donors donor)
         {
             context.Donors.Add(donor);
@@ -71,6 +91,8 @@ namespace DonorSystem.DAO
                 DonorLogin(donor.Email, donor.Password);
         }
 
+        /// <summary>Registers the patient.</summary>
+        /// <param name="patient">The patient.</param>
         public void PatientRegister(Patients patient)
         {
             context.Patients.Add(patient);
@@ -79,9 +101,6 @@ namespace DonorSystem.DAO
                 PatientLogin(patient.Email, patient.Password);
         }
 
-        public HomeDAO()
-        {
-            context = new DonorDBContext();
-        }
+        
     }
 }

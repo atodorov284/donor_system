@@ -8,11 +8,14 @@ namespace DonorSystem.DAO
     class WebsitesDAO
     {
         readonly DonorDBContext context;
+
+        /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.DAO.WebsitesDAO" /> class which controls the Websites table in the database.</summary>
         public WebsitesDAO()
         {
             context = new DonorDBContext();
         }
 
+        /// <summary>Shows all info from the Websites table.</summary>
         public void ShowAll()
         {
             List<Websites> websites = context.Websites.ToList();

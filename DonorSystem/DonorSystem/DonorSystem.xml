@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DonorSystem</name>
+    </assembly>
+    <members>
+        <member name="M:DonorSystem.Controllers.DonorController.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.Controllers.DonorController" /> class and encapsulates the logic for the donor role.</summary>
+        </member>
+        <member name="M:DonorSystem.Controllers.DonorController.DonorInteractions(DonorSystem.Models.Donors)">
+            <summary>Displays the possible options after a donor's blood has been received.</summary>
+            <param name="donor">The donor.</param>
+            <exception cref="T:System.FormatException">Value must be an integer.</exception>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.ExistingEmail(System.String,System.Boolean)">
+            <summary>Calls <see cref="F:DonorSystem.Controllers.HomeController.homeDAO"/> to see if the email already exists based on the role.</summary>
+            <param name="email">The email.</param>
+            <param name="isDonor">The role</param>
+            <returns>
+              <c>true</c> if exists, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.ValidatePassword(System.String)">
+            <summary>Validates the password.</summary>
+            <param name="password">The password.</param>
+            <returns>
+              <c>true</c> if password length is greater or equal to 6, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.ValidateEmail(System.String)">
+            <summary>Validates the email.</summary>
+            <param name="email">The email.</param>
+            <returns>
+              <c>true</c> if <see cref="T:System.ComponentModel.DataAnnotations.EmailAddressAttribute"/> validates the email, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.ShowUsefulInfo">
+            <summary>Calls <see cref="F:DonorSystem.Controllers.HomeController.websitesDAO"/> to show useful websites.</summary>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.Login(System.String,System.String,System.Int32)">
+            <summary>Calls <see cref="F:DonorSystem.Controllers.HomeController.homeDAO"/> to login with the credentials based on the role.</summary>
+            <param name="email">The email.</param>
+            <param name="password">The password.</param>
+            <param name="role">The role.</param>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.Register(System.String,System.String,System.Int32)">
+            <summary>Collects user information based on the role, validates, and calls <see cref="F:DonorSystem.Controllers.HomeController.homeDAO"/> to register the user.</summary>
+            <param name="email">The email.</param>
+            <param name="password">The password.</param>
+            <param name="role">The role.</param>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.InvalidName(System.String)">
+            <summary>Checks if the name is invalid.</summary>
+            <param name="name">The name.</param>
+            <returns>
+              <c>true</c> if the name has special characters or is too short, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.InvalidPhoneNumber(System.String)">
+            <summary>Checks if the phone number is invalid.</summary>
+            <param name="phoneNumber">The phone number.</param>
+            <returns>
+              <c>true</c> if the phone number is not 10 digits, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.InvalidBloodGroup(System.String)">
+            <summary>Checks if the blood group is invalid</summary>
+            <param name="bloodGroup">The blood group.</param>
+            <returns>
+              <c>true</c> if blood group is not in the form A+/- or B+/-, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.InvalidDiagnose(System.String)">
+            <summary>Checks if the diagnose is invalid.</summary>
+            <param name="diagnose">The diagnose.</param>
+            <returns>
+              <c>true</c> if diagnose has special characters or is too short, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Controllers.HomeController.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.Controllers.HomeController" /> class and encapsulates the logic of the program.</summary>
+        </member>
+        <member name="M:DonorSystem.Controllers.PatientController.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.Controllers.PatientController" /> class and encapsulates the logic for the patient role.</summary>
+        </member>
+        <member name="M:DonorSystem.Controllers.PatientController.ReceiveBlood(DonorSystem.Models.Patients,System.Int32)">
+            <summary>Displays the available donors and patient chooses which donor to get blood from.</summary>
+            <param name="patient">The patient.</param>
+            <param name="numberOfDonors">The number of donors.</param>
+            <exception cref="T:System.FormatException">Value must be an integer. Try again.</exception>
+            <exception cref="T:System.Exception">Invalid donor. Try again.</exception>
+        </member>
+        <member name="M:DonorSystem.DAO.DonorsDAO.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.DAO.DonorsDAO" /> class which controls the Donors table in the database.</summary>
+        </member>
+        <member name="M:DonorSystem.DAO.DonorsDAO.EnrollAgain(DonorSystem.Models.Donors)">
+            <summary>Changes the donor status back to Available and enrolls him back in the system..</summary>
+            <param name="donor">The donor.</param>
+        </member>
+        <member name="M:DonorSystem.DAO.DonorsDAO.DeleteDonor(DonorSystem.Models.Donors)">
+            <summary>Deletes the donor from the database.</summary>
+            <param name="donor">The donor.</param>
+        </member>
+        <member name="M:DonorSystem.DAO.DonorsDAO.TransfuseBlood(DonorSystem.Models.Donors,DonorSystem.Models.Patients)">
+            <summary>Patient receives the donor's blood and updates the donor's status to the patient's name.</summary>
+            <param name="donatingDonor">The donating donor.</param>
+            <param name="receivingPatient">The receiving patient.</param>
+        </member>
+        <member name="M:DonorSystem.DAO.HomeDAO.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.DAO.HomeDAO" /> class and registers/logins the users.</summary>
+        </member>
+        <member name="M:DonorSystem.DAO.HomeDAO.DonorLogin(System.String,System.String)">
+            <summary>Checks for valid credential and logs the donor in.</summary>
+            <param name="email">The email.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="M:DonorSystem.DAO.HomeDAO.PatientLogin(System.String,System.String)">
+            <summary>Checks for valid credential and logs the patient in.</summary>
+            <param name="email">The email.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="M:DonorSystem.DAO.HomeDAO.ExistingEmail(System.String,System.Boolean)">
+            <summary>Checks if email already exists based on the role</summary>
+            <param name="email">The email.</param>
+            <param name="isDonor">if set to <c>true</c> [is donor].</param>
+            <returns>
+              <c>true</c> if email already exists, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.DAO.HomeDAO.DonorRegister(DonorSystem.Models.Donors)">
+            <summary>Registers the donor.</summary>
+            <param name="donor">The donor.</param>
+        </member>
+        <member name="M:DonorSystem.DAO.HomeDAO.PatientRegister(DonorSystem.Models.Patients)">
+            <summary>Registers the patient.</summary>
+            <param name="patient">The patient.</param>
+        </member>
+        <member name="M:DonorSystem.DAO.PatientsDAO.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.DAO.PatientsDAO" /> class which controls the Patients table in the database.</summary>
+        </member>
+        <member name="M:DonorSystem.DAO.PatientsDAO.FindCompatibleDonors(DonorSystem.Models.Patients)">
+            <summary>Finds all compatible donors for the patient.</summary>
+            <param name="patient">The patient.</param>
+            <returns>List&lt;Donors&gt;.</returns>
+        </member>
+        <member name="M:DonorSystem.DAO.PatientsDAO.DeletePatient(DonorSystem.Models.Patients)">
+            <summary>Deletes the patient from the database.</summary>
+            <param name="patient">The patient.</param>
+        </member>
+        <member name="M:DonorSystem.DAO.WebsitesDAO.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.DAO.WebsitesDAO" /> class which controls the Websites table in the database.</summary>
+        </member>
+        <member name="M:DonorSystem.DAO.WebsitesDAO.ShowAll">
+            <summary>Shows all info from the Websites table.</summary>
+        </member>
+        <member name="M:DonorSystem.Views.DonorMenu.#ctor(DonorSystem.Models.Donors)">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.Views.DonorMenu" /> class and displays the menu for the donor role.</summary>
+            <param name="donor">The donor.</param>
+        </member>
+        <member name="M:DonorSystem.Views.DonorMenu.ShowDonorMenu(DonorSystem.Models.Donors)">
+            <summary>Shows the donor menu and checks if donor's blood has been received and redirects.</summary>
+            <param name="donor">The donor.</param>
+        </member>
+        <member name="F:DonorSystem.Views.HomeMenu.Exit">
+            <summary>The exit value used to exit the <see cref="M:DonorSystem.Views.HomeMenu.Input"/> method.</summary>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DonorSystem.Views.HomeMenu" /> class and starts the whole program.</summary>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ShowMenu">
+            <summary>Displays main menu.</summary>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.Input">
+            <summary>Gets user input, validates and displays main menu.</summary>
+            <exception cref="T:System.FormatException">Value must be an integer.</exception>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.Login">
+            <summary>Gets user information, validates and calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to login the user.</summary>
+            <exception cref="T:System.FormatException">Value must be an integer.</exception>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.Register">
+            <summary>Gets user email and password, validates, and calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to register user.</summary>
+            <exception cref="T:System.FormatException">Value must be an integer.</exception>
+            <exception cref="T:System.Exception">Invalid email</exception>
+            <exception cref="T:System.Exception">Email already in use.</exception>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.HashPassword(System.String)">
+            <summary>Hashes the password.</summary>
+            <param name="password">The password.</param>
+            <returns>Hashed password</returns>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ShowUsefulInfo">
+            <summary>Calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to show useful websites.</summary>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ValidatePassword(System.String)">
+            <summary>Calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to validate the password.</summary>
+            <param name="password">The password.</param>
+            <returns>
+              <c>true</c> if password is valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ValidateEmail(System.String)">
+            <summary>Calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to validate the email.</summary>
+            <param name="email">The email.</param>
+            <returns>
+              <c>true</c> if email is valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.PasswordMatch(System.String,System.String)">
+            <summary>Checks if the passwords match.</summary>
+            <param name="password">The password.</param>
+            <param name="repeated">The repeated password.</param>
+            <returns>
+              <c>true</c> if equal, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Views.HomeMenu.ExistingEmail(System.String,System.Int32)">
+            <summary>Calls <see cref="F:DonorSystem.Views.HomeMenu.homeController"/> to see if the email already exists based on the role.</summary>
+            <param name="email">The email.</param>
+            <param name="role">The role.</param>
+            <returns>
+              <c>true</c> if exists, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:DonorSystem.Views.PatientMenu.#ctor(DonorSystem.Models.Patients)">
+            <summary>
+              <para>
+            Initializes a new instance of the <see cref="T:DonorSystem.Views.PatientMenu" /> class and displays the menu for the patient role.</para>
+            </summary>
+            <param name="patient">The patient.</param>
+        </member>
+        <member name="M:DonorSystem.Views.PatientMenu.ShowPatientMenu(DonorSystem.Models.Patients)">
+            <summary>Shows the patient menu and gets input from the user to receive blood.</summary>
+            <param name="patient">The patient.</param>
+            <exception cref="T:System.FormatException">Value must be an integer. Try again.</exception>
+        </member>
+    </members>
+</doc>

@@ -7,15 +7,17 @@ namespace DonorSystem.Views
 {
     class HomeMenu
     {
+        /// <summary>The exit value used to exit the <see cref="Input"/> method.</summary>
         private const int Exit = 4;
         readonly HomeController homeController;
+        /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.Views.HomeMenu" /> class and starts the whole program.</summary>
         public HomeMenu()
         {
             homeController = new HomeController();
             Input();
         }
-
-        public void ShowMenu()
+        /// <summary>Displays main menu.</summary>
+        private static void ShowMenu()
         {
             Console.Clear();
             Console.WriteLine("Welcome to the blood donor app.");
@@ -26,7 +28,9 @@ namespace DonorSystem.Views
             Console.WriteLine("4. Exit");
         }
 
-        public void Input()
+        /// <summary>Gets user input, validates and displays main menu.</summary>
+        /// <exception cref="FormatException">Value must be an integer.</exception>
+        private void Input()
         {
             int command = 0;
             do
@@ -59,7 +63,9 @@ namespace DonorSystem.Views
             } while (command != Exit);
         }
 
-        public void Login()
+        /// <summary>Gets user information, validates and calls <see cref="homeController"/> to login the user.</summary>
+        /// <exception cref="FormatException">Value must be an integer.</exception>
+        private void Login()
         {
             int role = 0;
             do
@@ -77,14 +83,21 @@ namespace DonorSystem.Views
                     Console.ReadKey();
                 }
             } while (role != 1 && role != 2);
+
             Console.Write("Email: ");
             string email = Console.ReadLine();
+
             Console.Write("Password: ");
             string password = HashPassword(Console.ReadLine());
+
             homeController.Login(email, password, role);
         }
 
-        public void Register()
+        /// <summary>Gets user email and password, validates, and calls <see cref="homeController"/> to register user.</summary>
+        /// <exception cref="FormatException">Value must be an integer.</exception>
+        /// <exception cref="Exception">Invalid email</exception>
+        /// <exception cref="Exception">Email already in use.</exception>
+        private void Register()
         {
             int role = 0;
             do
@@ -102,6 +115,7 @@ namespace DonorSystem.Views
                     Console.ReadKey();
                 }
             } while (role != 1 && role != 2);
+
             Console.Write("Email: ");
             string email = Console.ReadLine();
             try
@@ -119,7 +133,6 @@ namespace DonorSystem.Views
 
             Console.Write("Password: ");
             string password = Console.ReadLine();
-
             if (!ValidatePassword(password)) 
             {
                 Console.WriteLine("Password must be at least 6 symbols.");
@@ -127,6 +140,7 @@ namespace DonorSystem.Views
                 Console.ReadKey();
                 return;
             }
+
             Console.Write("Repeat password: ");
             string repeatedPassword = Console.ReadLine();
             if (!PasswordMatch(password, repeatedPassword))
@@ -136,37 +150,61 @@ namespace DonorSystem.Views
                 Console.ReadKey();
                 return;
             }
+
             password = HashPassword(password);
+
             homeController.Register(email, password, role);
         }
 
-        private string HashPassword(string password)
+        /// <summary>Hashes the password.</summary>
+        /// <param name="password">The password.</param>
+        /// <returns>Hashed password</returns>
+        private static string HashPassword(string password)
         {
             var provider = new SHA1CryptoServiceProvider();
             var encoding = new UnicodeEncoding();
             return Convert.ToBase64String(provider.ComputeHash(encoding.GetBytes(password)));
         }
 
+        /// <summary>Calls <see cref="homeController"/> to show useful websites.</summary>
         private void ShowUsefulInfo()
         {
             homeController.ShowUsefulInfo();
         }
 
+        /// <summary>Calls <see cref="homeController"/> to validate the password.</summary>
+        /// <param name="password">The password.</param>
+        /// <returns>
+        ///   <c>true</c> if password is valid, <c>false</c> otherwise.</returns>
         private bool ValidatePassword(string password)
         {
             return homeController.ValidatePassword(password);
         }
 
+        /// <summary>Calls <see cref="homeController"/> to validate the email.</summary>
+        /// <param name="email">The email.</param>
+        /// <returns>
+        ///   <c>true</c> if email is valid, <c>false</c> otherwise.</returns>
         private bool ValidateEmail(string email)
         {
             return homeController.ValidateEmail(email);
         }
 
+        /// <summary>Checks if the passwords match.</summary>
+        /// <param name="password">The password.</param>
+        /// <param name="repeated">The repeated password.</param>
+        /// <returns>
+        ///   <c>true</c> if equal, <c>false</c> otherwise.</returns>
         private bool PasswordMatch(string password, string repeated)
         {
             return password == repeated;
         }
 
+        /// <summary>Calls <see cref="homeController"/> to see if the email already exists based on the role.</summary>
+        /// <param name="email">The email.</param>
+        /// <param name="role">The role.</param>
+        /// <returns>
+        ///   <c>true</c> if exists, <c>false</c> otherwise.</returns>
         private bool ExistingEmail(string email, int role)
         {
             bool isDonor = role == 1;

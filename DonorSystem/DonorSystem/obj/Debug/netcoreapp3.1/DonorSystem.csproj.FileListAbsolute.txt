@@ -54,3 +54,4 @@ C:\Users\User\OneDrive\Documents\donor_system\DonorSystem\DonorSystem\obj\Debug\
 C:\Users\User\OneDrive\Documents\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp3.1\DonorSystem.dll
 C:\Users\User\OneDrive\Documents\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp3.1\DonorSystem.pdb
 C:\Users\User\OneDrive\Documents\donor_system\DonorSystem\DonorSystem\obj\Debug\netcoreapp3.1\DonorSystem.genruntimeconfig.cache
+C:\Users\User\OneDrive\Documents\donor_system\DonorSystem\DonorSystem\bin\Debug\netcoreapp3.1\DonorSystem.xml

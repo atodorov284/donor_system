@@ -10,12 +10,19 @@ namespace DonorSystem.Controllers
     {
         readonly PatientsDAO patientsDAO;
         readonly DonorsDAO donorsDAO;
+
+        /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.Controllers.PatientController" /> class and encapsulates the logic for the patient role.</summary>
         public PatientController()
         {
             patientsDAO = new PatientsDAO();
             donorsDAO = new DonorsDAO();
         }
 
+        /// <summary>Displays the available donors and patient chooses which donor to get blood from.</summary>
+        /// <param name="patient">The patient.</param>
+        /// <param name="numberOfDonors">The number of donors.</param>
+        /// <exception cref="FormatException">Value must be an integer. Try again.</exception>
+        /// <exception cref="Exception">Invalid donor. Try again.</exception>
         public void ReceiveBlood(Patients patient, int numberOfDonors)
         {
             List<Donors> potentialDonors = patientsDAO.FindCompatibleDonors(patient);
