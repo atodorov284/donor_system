@@ -6,21 +6,24 @@ using System.Linq;
 
 namespace DonorSystem.DAO
 {
-    class WebsitesDAO
+    public class WebsitesDAO
     {
-        DonorDBContext context;
+        private DonorDBContext context;
+
         public WebsitesDAO()
         {
             context = new DonorDBContext();
         }
 
-        public void ShowAll()
+        public override string ToString()
         {
+            string output = "";
             List<Website> websites = context.Websites.ToList();
             for (int i = 0; i < websites.Count; i++)
             {
-                Console.WriteLine($"{i+1}. {websites[i].Name} {websites[i].Description}");
+                output = $"{output}{Environment.NewLine}{i + 1}. {websites[i].Name} {websites[i].Description}";
             }
+            return output;
         }
     }
 }

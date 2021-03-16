@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DonorSystem.DAO
 {
-    class PatientsDAO
+    public class PatientsDAO
     {
         DonorDBContext context;
 

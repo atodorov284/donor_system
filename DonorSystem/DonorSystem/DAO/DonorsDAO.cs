@@ -6,9 +6,10 @@ using System.Linq;
 
 namespace DonorSystem.DAO
 {
-    class DonorsDAO
+    public class DonorsDAO
     {
         DonorDBContext context;
+
         public DonorsDAO()
         {
             context = new DonorDBContext();
@@ -18,6 +19,7 @@ namespace DonorSystem.DAO
         {
             var updatedDonor = context.Donors.First(d => d.DonorId == donor.DonorId);
             updatedDonor.Status = "Available";
+            donor.Status = "Available";
             context.SaveChanges();
         }
 
@@ -32,6 +34,7 @@ namespace DonorSystem.DAO
         {
             var updatedDonor = context.Donors.First(d => d.DonorId == donatingDonor.DonorId);
             updatedDonor.Status = $"{receivingPatient.Name}";
+            donatingDonor.Status = $"{receivingPatient.Name}";
             context.SaveChanges();
         }
     }

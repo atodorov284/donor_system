@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <StartupObject>DonorSystem.Program</StartupObject>
-    <ApplicationIcon>win95.ico</ApplicationIcon>
+    <ApplicationIcon>donor_system_logo_updated.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
