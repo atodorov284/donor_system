@@ -7022,11 +7022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\last_branch\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj",
       "projectName": "DonorSystem.Tests",
-      "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj",
+      "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\last_branch\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem.Tests\\obj\\",
+      "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\last_branch\\DonorSystem\\DonorSystem.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7043,8 +7043,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\DonorSystem.csproj": {
-              "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\DonorSystem.csproj"
+            "C:\\Users\\User\\OneDrive\\Documents\\last_branch\\DonorSystem\\DonorSystem\\DonorSystem.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\last_branch\\DonorSystem\\DonorSystem\\DonorSystem.csproj"
             }
           }
         }

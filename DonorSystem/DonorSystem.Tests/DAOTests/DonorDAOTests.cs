@@ -72,14 +72,16 @@ namespace DonorSystem.Tests
             HomeDAO homeDAO = new HomeDAO();
 
             DonorsDAO donorsDAO = new DonorsDAO();
-            Donor testDonor = new Donor();
-            testDonor.DonorId = 101;
-            testDonor.Name = "Test Donor 1";
-            testDonor.Email = "testdonor1@abv.bg";
-            testDonor.Password = "btWDPPNShuv4Zit7WUnw10K77D8=";
-            testDonor.PhoneNumber = "0888123456";
-            testDonor.Status = null;
-            testDonor.BloodGroup = "B-";
+            Donor testDonor = new Donor
+            {
+                DonorId = 101,
+                Name = "Test Donor 1",
+                Email = "testdonor1@abv.bg",
+                Password = "btWDPPNShuv4Zit7WUnw10K77D8=",
+                PhoneNumber = "0888123456",
+                Status = null,
+                BloodGroup = "B-"
+            };
 
             //Act
             homeDAO.DonorRegister(testDonor);

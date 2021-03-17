@@ -90,14 +90,16 @@ namespace DonorSystem.Tests
             //Arrange
             PatientController patientController = new PatientController();
             Donor donor = new Donor();
-            patient = new Patient();
-            patient.PatientId = 2;
-            patient.Name = "Test Patient 2";
-            patient.Email = "test.patient2@abv.bg";
-            patient.Password = "btWDPPNShuv4Zit7WUnw10K77D8=";
-            patient.PhoneNumber = "0888123456";
-            patient.Diagnose = "A+";
-            patient.BloodGroup = "test 2";
+            patient = new Patient
+            {
+                PatientId = 2,
+                Name = "Test Patient 2",
+                Email = "test.patient2@abv.bg",
+                Password = "btWDPPNShuv4Zit7WUnw10K77D8=",
+                PhoneNumber = "0888123456",
+                Diagnose = "A+",
+                BloodGroup = "test 2"
+            };
             homeController.RegisterAsPatient(
                 patient.Email,
                 patient.Password,

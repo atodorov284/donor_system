@@ -12,7 +12,8 @@ VALUES
 ("Dimitur Dimitrov", "dimitur.dimitrov@abv.bg", "btWDPPNShuv4Zit7WUnw10K77D8=", "Blood Cancer", "A+", "0881231234"),
 ("Nikolai Petrov", "nikolai.petrov@abv.bg", "btWDPPNShuv4Zit7WUnw10K77D8=", "Blood Cancer", "A-", "0881231234"),
 ("Petq Stoqnova", "petq.stoqnova@abv.bg", "btWDPPNShuv4Zit7WUnw10K77D8=", "Blood Cancer", "0+", "0881231234"),
-("Dimitur Dimitrov", "dimitur.dimitrov@abv.bg", "btWDPPNShuv4Zit7WUnw10K77D8=", "Blood Cancer", "A+", "0881231234");
+("Dimitur Petrov", "dimitur.petrov@abv.bg", "btWDPPNShuv4Zit7WUnw10K77D8=", "Blood Cancer", "A+", "0881231234"),
+("Test Patient", "test.patient@abv.bg", "btWDPPNShuv4Zit7WUnw10K77D8", "test", "B-", "0888123456");
 
 
 INSERT INTO websites(name, description)

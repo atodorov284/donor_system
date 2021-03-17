@@ -6211,11 +6211,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\DonorSystem.csproj",
+      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\last_branch\\DonorSystem\\DonorSystem\\DonorSystem.csproj",
       "projectName": "DonorSystem",
-      "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\DonorSystem.csproj",
+      "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\last_branch\\DonorSystem\\DonorSystem\\DonorSystem.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\obj\\",
+      "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\last_branch\\DonorSystem\\DonorSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
