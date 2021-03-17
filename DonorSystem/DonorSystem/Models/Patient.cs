@@ -26,13 +26,12 @@ namespace DonorSystem.Models
             {
                 return false;
             }
-            return (this.PatientId == other.PatientId) &&
-                    (this.Name == other.Name) &&
-                    (this.Email == other.Email) &&
-                    (this.Password == other.Password) &&
-                    (this.PhoneNumber == other.PhoneNumber) &&
-                    (this.Diagnose == other.Diagnose) &&
-                    (this.BloodGroup == other.BloodGroup);
+            return (this.Name == other.Name) &&
+                   (this.Email == other.Email) &&
+                   (this.Password == other.Password) &&
+                   (this.PhoneNumber == other.PhoneNumber) &&
+                   (this.Diagnose == other.Diagnose) &&
+                   (this.BloodGroup == other.BloodGroup);
         }
 
         /// <summary>Returns a hash code for this instance.</summary>
