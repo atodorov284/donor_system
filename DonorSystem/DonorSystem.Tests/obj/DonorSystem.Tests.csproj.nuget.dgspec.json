@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj": {}
+    "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj": {
+    "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj",
+        "projectUniqueName": "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj",
         "projectName": "DonorSystem.Tests",
-        "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem.Tests\\obj\\",
+        "projectPath": "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem.Tests\\DonorSystem.Tests.csproj",
+        "packagesPath": "C:\\Users\\Computer\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Computer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +31,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\DonorSystem.csproj": {
-                "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\DonorSystem.csproj"
+              "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem\\DonorSystem.csproj": {
+                "projectPath": "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem\\DonorSystem.csproj"
               }
             }
           }
@@ -72,21 +75,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\DonorSystem.csproj": {
+    "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem\\DonorSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\DonorSystem.csproj",
+        "projectUniqueName": "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem\\DonorSystem.csproj",
         "projectName": "DonorSystem",
-        "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\DonorSystem.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\donor_system-branch2\\DonorSystem\\DonorSystem\\obj\\",
+        "projectPath": "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem\\DonorSystem.csproj",
+        "packagesPath": "C:\\Users\\Computer\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents2\\REPOS\\atodorov284\\donor_system\\donor_system\\DonorSystem\\DonorSystem\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Computer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -138,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

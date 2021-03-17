@@ -89,7 +89,6 @@ namespace DonorSystem.Tests
         {
             //Arrange
             PatientController patientController = new PatientController();
-            Donor donor = new Donor();
             patient = new Patient();
             patient.PatientId = 2;
             patient.Name = "Test Patient 2";
@@ -109,12 +108,24 @@ namespace DonorSystem.Tests
             string password = "btWDPPNShuv4Zit7WUnw10K77D8=";
 
             //Act
-            donor = homeController.LoginAsDonor(email, password);
+            Donor donor = homeController.LoginAsDonor(email, password);
             patient = homeController.LoginAsPatient(patient.Email, patient.Password);
             patientController.ReceiveBlood(patient, donor);
 
             //Assert
             Assert.IsTrue(homeController.LoginAsPatient(patient.Email, patient.Password) == null);
+
+            //Clean-Up
+            homeController.RegisterAsPatient(
+                "cleanup@abv.bg",
+                "cleanup",
+                "Available",
+                "0123456789",
+                "",
+                "A+");
+            Patient cleanup = homeController.LoginAsPatient("cleanup@abv.bg", "cleanup");
+            donor = homeController.LoginAsDonor(email, password);
+            patientController.ReceiveBlood(cleanup, donor);
         }
 
         /// <summary>

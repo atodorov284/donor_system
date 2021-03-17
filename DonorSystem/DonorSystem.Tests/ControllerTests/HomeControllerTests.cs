@@ -164,12 +164,12 @@ namespace DonorSystem.Tests
         {
             //Arrange
             HomeController homeController = new HomeController();
-            string name = "Test Patient";
-            string email = "test.patient@abv.bg";
+            string name = "Dimitur Dimitrov";
+            string email = "dimitur.dimitrov@abv.bg";
             string password = "btWDPPNShuv4Zit7WUnw10K77D8=";
-            string phoneNumber = "0888123456";
-            string diagnose = "test";
-            string bloodGroup = "B-";
+            string phoneNumber = "0881231234";
+            string diagnose = "Blood Cancer";
+            string bloodGroup = "A+";
 
             //Act
             bool expected = homeController.RegisterAsPatient(email, password, name, phoneNumber, bloodGroup, diagnose);

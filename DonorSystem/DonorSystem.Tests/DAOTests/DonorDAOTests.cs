@@ -18,28 +18,6 @@ namespace DonorSystem.Tests
     class DonorDAOTests
     {
         /// <summary>
-        /// Changes the status of an existing donor.
-        /// </summary>
-        [Test]
-        public void ChangeDonorStatusTest()
-        {
-            //Arrange
-            HomeDAO homeDAO = new HomeDAO();
-
-            DonorsDAO donorsDAO = new DonorsDAO();
-            string email = "pesho.petrov@abv.bg";
-            string password = "btWDPPNShuv4Zit7WUnw10K77D8=";
-            string expected = "Available";
-
-            //Act
-            Donor donor = homeDAO.DonorLogin(email, password);
-            donorsDAO.ChangeDonorStatus(donor);
-
-            //Assert
-            Assert.AreEqual(expected, donor.Status);
-        }
-
-        /// <summary>
         /// Transfuses blood from an existing donor to a test patient.
         /// </summary>
         [Test]
@@ -60,6 +38,40 @@ namespace DonorSystem.Tests
 
             //Assert
             Assert.AreEqual(testPatient.Name, donor.Status);
+
+            //Clean-Up
+            Patient cleanup = new Patient();
+            cleanup.Email = "cleanup@abv.bg";
+            cleanup.Password = "cleanup";
+            cleanup.Name = "Available";
+            cleanup.PhoneNumber = "0123456789";
+            cleanup.BloodGroup = "A+";
+            homeDAO.PatientRegister(cleanup);
+            cleanup = homeDAO.PatientLogin("cleanup@abv.bg", "cleanup");
+            donor = homeDAO.DonorLogin(email, password);
+            donorsDAO.TransfuseBlood(donor, cleanup);
+        }
+
+        /// <summary>
+        /// Changes the status of an existing donor.
+        /// </summary>
+        [Test]
+        public void ChangeDonorStatusTest()
+        {
+            //Arrange
+            HomeDAO homeDAO = new HomeDAO();
+
+            DonorsDAO donorsDAO = new DonorsDAO();
+            string email = "pesho.petrov@abv.bg";
+            string password = "btWDPPNShuv4Zit7WUnw10K77D8=";
+            string expected = "Available";
+
+            //Act
+            Donor donor = homeDAO.DonorLogin(email, password);
+            donorsDAO.ChangeDonorStatus(donor);
+
+            //Assert
+            Assert.AreEqual(expected, donor.Status);
         }
 
         /// <summary>
