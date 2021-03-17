@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography;
-using System.Text;
-using System.Linq;
+
 using DonorSystem.Controllers;
-//using DonorSystem.Models;
 
 namespace DonorSystem.Views
 {
@@ -170,10 +165,8 @@ namespace DonorSystem.Views
             string email = Console.ReadLine();
             try
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                if (homeController.ValidateEmail(email) == false) throw new Exception("Invalid email");
+                if (!homeController.ValidateEmail(email)) throw new Exception("Invalid email");
                 if (homeController.EmailAlreadyExists(email, role)) throw new Exception("Email already in use.");
-                Console.ResetColor();
             }
             catch(Exception e)
             {
@@ -187,7 +180,9 @@ namespace DonorSystem.Views
             string password = Console.ReadLine();
             if (homeController.InvalidPassword(password)) 
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Password must be at least 6 symbols.");
+                Console.ResetColor();
                 Return();
                 return;
             }
@@ -196,7 +191,9 @@ namespace DonorSystem.Views
             string repeatedPassword = Console.ReadLine();
             if (homeController.PasswordMismatch(password, repeatedPassword))
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Password mismatch.");
+                Console.ResetColor();
                 Return();
                 return;
             }
@@ -211,7 +208,9 @@ namespace DonorSystem.Views
                     string name = Console.ReadLine();
                     if (homeController.InvalidName(name))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Name cannot contain other symbols or be less than 2 letters.");
+                        Console.ResetColor();
                         Return();
                         return;
                     }
@@ -220,7 +219,9 @@ namespace DonorSystem.Views
                     string phoneNumber = Console.ReadLine();
                     if (homeController.InvalidPhoneNumber(phoneNumber))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Phone number should be 10 symbols and all numbers.");
+                        Console.ResetColor();
                         Return();
                         return;
                     }
@@ -231,7 +232,9 @@ namespace DonorSystem.Views
                     string bloodGroup = Console.ReadLine();
                     if (homeController.InvalidBloodGroup(bloodGroup))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Blood group is invalid");
+                        Console.ResetColor();
                         Return();
                         return;
                     }
@@ -254,7 +257,9 @@ namespace DonorSystem.Views
                     string name = Console.ReadLine();
                     if (homeController.InvalidName(name))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Name cannot contain other symbols or be less than 2 letters.");
+                        Console.ResetColor();
                         Return();
                         return;
                     }
@@ -263,7 +268,9 @@ namespace DonorSystem.Views
                     string phoneNumber = Console.ReadLine();
                     if (homeController.InvalidPhoneNumber(phoneNumber))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Phone number should be 10 symbols and all numbers.");
+                        Console.ResetColor();
                         Return();
                         return;
                     }
@@ -272,7 +279,9 @@ namespace DonorSystem.Views
                     string bloodGroup = Console.ReadLine();
                     if (homeController.InvalidBloodGroup(bloodGroup))
                     {
-                        Console.WriteLine("Enter a valid blood group.");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Blood group is invalid");
+                        Console.ResetColor();
                         Return();
                         return;
                     }
@@ -281,7 +290,9 @@ namespace DonorSystem.Views
                     string diagnose = Console.ReadLine();
                     if (homeController.InvalidDiagnose(diagnose))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Diagnose cannot be less than 3 symbols and must be all letters.");
+                        Console.ResetColor();
                         Return();
                         return;
                     }

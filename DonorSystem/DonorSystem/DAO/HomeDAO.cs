@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using DonorSystem.Views;
 using DonorSystem.Models;
 
 namespace DonorSystem.DAO
 {
-    /// <summary>
-    /// Управлява базата данни и извършва фунмции полезни на класа HomeController.
-    /// </summary>
     public class HomeDAO
     {
         DonorDBContext context;
@@ -29,7 +23,10 @@ namespace DonorSystem.DAO
         {
             var donor = this.context.Donors
                 .FirstOrDefault(d => d.Email.Equals(email) && d.Password.Equals(password));
-
+            if (donor != null)
+            {
+                context.Entry(donor).Reload();
+            }
             return donor;
         }
 
@@ -41,7 +38,10 @@ namespace DonorSystem.DAO
         {
             var patient = this.context.Patients
                 .FirstOrDefault(d => d.Email.Equals(email) && d.Password.Equals(password));
-
+            if (patient != null)
+            {
+                context.Entry(patient).Reload();
+            }
             return patient;
         }
 

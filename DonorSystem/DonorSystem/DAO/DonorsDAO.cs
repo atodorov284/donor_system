@@ -8,7 +8,7 @@ namespace DonorSystem.DAO
 {
     public class DonorsDAO
     {
-        DonorDBContext context;
+        readonly DonorDBContext context;
 
         /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.DAO.DonorsDAO" /> class which controls the Donors table in the database.</summary>
         public DonorsDAO()

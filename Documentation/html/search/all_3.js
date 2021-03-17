@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['controllers_5',['Controllers',['../namespace_donor_system_1_1_controllers.html',1,'DonorSystem']]],
+  ['dao_6',['DAO',['../namespace_donor_system_1_1_d_a_o.html',1,'DonorSystem']]],
+  ['deletedonor_7',['DeleteDonor',['../class_donor_system_1_1_d_a_o_1_1_donors_d_a_o.html#a73ca3d976fb30583243116a336c0cf59',1,'DonorSystem::DAO::DonorsDAO']]],
+  ['deletepatient_8',['DeletePatient',['../class_donor_system_1_1_d_a_o_1_1_patients_d_a_o.html#a3dca1d97cd1145cd1c8c20070fd53175',1,'DonorSystem.DAO.PatientsDAO.DeletePatient()'],['../class_donor_system_1_1_controllers_1_1_patient_controller.html#ac811ffdddb5e9d72f27ea24f13080557',1,'DonorSystem.Controllers.PatientController.DeletePatient()']]],
+  ['description_9',['Description',['../class_donor_system_1_1_models_1_1_website.html#a7b8d0149a45962a2c97ebaa80537175e',1,'DonorSystem::Models::Website']]],
+  ['diagnose_10',['Diagnose',['../class_donor_system_1_1_models_1_1_patient.html#ab661861667ebc822d03337bd1a2f651b',1,'DonorSystem::Models::Patient']]],
+  ['donor_11',['Donor',['../class_donor_system_1_1_models_1_1_donor.html',1,'DonorSystem::Models']]],
+  ['donor_2ecs_12',['Donor.cs',['../_donor_8cs.html',1,'']]],
+  ['donorcontroller_13',['DonorController',['../class_donor_system_1_1_controllers_1_1_donor_controller.html#a7adb8d58f432fdc6c9abeb9562ca1e10',1,'DonorSystem.Controllers.DonorController.DonorController()'],['../class_donor_system_1_1_controllers_1_1_donor_controller.html',1,'DonorSystem.Controllers.DonorController']]],
+  ['donorcontroller_2ecs_14',['DonorController.cs',['../_donor_controller_8cs.html',1,'']]],
+  ['donordbcontext_15',['DonorDBContext',['../class_donor_system_1_1_donor_d_b_context.html#a7ad977dfde44e26287b9daebf0d2a112',1,'DonorSystem.DonorDBContext.DonorDBContext()'],['../class_donor_system_1_1_donor_d_b_context.html#a70498a8278508e4dd180c72d54b4880c',1,'DonorSystem.DonorDBContext.DonorDBContext(DbContextOptions&lt; DonorDBContext &gt; options)'],['../class_donor_system_1_1_donor_d_b_context.html',1,'DonorSystem.DonorDBContext']]],
+  ['donordbcontext_2ecs_16',['DonorDBContext.cs',['../_donor_d_b_context_8cs.html',1,'']]],
+  ['donorid_17',['DonorId',['../class_donor_system_1_1_models_1_1_donor.html#a9d7f7234cb99d0d01570a4b61b30341b',1,'DonorSystem::Models::Donor']]],
+  ['donorlogin_18',['DonorLogin',['../class_donor_system_1_1_d_a_o_1_1_home_d_a_o.html#a4355f31ff9b750c3fde4cd46e5b8b525',1,'DonorSystem::DAO::HomeDAO']]],
+  ['donormenu_19',['DonorMenu',['../class_donor_system_1_1_views_1_1_donor_menu.html#a5b33b28098a780ecf7f1e867ce15ab67',1,'DonorSystem.Views.DonorMenu.DonorMenu()'],['../class_donor_system_1_1_views_1_1_donor_menu.html',1,'DonorSystem.Views.DonorMenu']]],
+  ['donormenu_2ecs_20',['DonorMenu.cs',['../_donor_menu_8cs.html',1,'']]],
+  ['donorregister_21',['DonorRegister',['../class_donor_system_1_1_d_a_o_1_1_home_d_a_o.html#a7547cfc464c19d752324010a17c30782',1,'DonorSystem::DAO::HomeDAO']]],
+  ['donors_22',['Donors',['../class_donor_system_1_1_donor_d_b_context.html#af1b159132fbac50bea1e38627679a319',1,'DonorSystem::DonorDBContext']]],
+  ['donorsdao_23',['DonorsDAO',['../class_donor_system_1_1_d_a_o_1_1_donors_d_a_o.html#a57fdaa78f8ca8d48e1f80c193b971bb1',1,'DonorSystem.DAO.DonorsDAO.DonorsDAO()'],['../class_donor_system_1_1_d_a_o_1_1_donors_d_a_o.html',1,'DonorSystem.DAO.DonorsDAO']]],
+  ['donorsdao_2ecs_24',['DonorsDAO.cs',['../_donors_d_a_o_8cs.html',1,'']]],
+  ['donorsystem_25',['DonorSystem',['../namespace_donor_system.html',1,'']]],
+  ['donorsystem_2eassemblyinfo_2ecs_26',['DonorSystem.AssemblyInfo.cs',['../_release_2netcoreapp2_80_2_donor_system_8_assembly_info_8cs.html',1,'(Global Namespace)'],['../_release_2netcoreapp3_81_2_donor_system_8_assembly_info_8cs.html',1,'(Global Namespace)'],['../_debug_2netcoreapp3_81_2_donor_system_8_assembly_info_8cs.html',1,'(Global Namespace)'],['../_debug_2netcoreapp2_80_2_donor_system_8_assembly_info_8cs.html',1,'(Global Namespace)'],['../_debug_2net5_80_2_donor_system_8_assembly_info_8cs.html',1,'(Global Namespace)'],['../_release_2net5_80_2_donor_system_8_assembly_info_8cs.html',1,'(Global Namespace)']]],
+  ['models_27',['Models',['../namespace_donor_system_1_1_models.html',1,'DonorSystem']]],
+  ['views_28',['Views',['../namespace_donor_system_1_1_views.html',1,'DonorSystem']]]
+];

@@ -28,7 +28,7 @@ namespace DonorSystem.Tests
             //Arrange
             PatientsDAO patientsDAO = new PatientsDAO();
             Patient patient = new Patient();
-            patient.PatientId = 1;
+            patient.PatientId = 5;
             patient.Name = "Test Patient";
             patient.Email = "test.patient@abv.bg";
             patient.Password = "btWDPPNShuv4Zit7WUnw10K77D8=";
@@ -36,7 +36,7 @@ namespace DonorSystem.Tests
             patient.Diagnose = "test";
             patient.BloodGroup = "B-";
             bool result = true;
-            List<int> ids = new List<int>() { 39, 40 };
+            List<int> ids = new List<int>() { 3, 4 };
 
             //Act
             List<Donor> donors = patientsDAO.FindCompatibleDonors(patient);

@@ -31,7 +31,7 @@ namespace DonorSystem.Tests
 
             donor = new Donor
             {
-                DonorId = 40,
+                DonorId = 4,
                 Name = "Teodora Stoqnova",
                 Email = "teodora.stoqnova@abv.bg",
                 Password = "btWDPPNShuv4Zit7WUnw10K77D8=",

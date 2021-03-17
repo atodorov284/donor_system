@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using DonorSystem.Models;
 using DonorSystem.DAO;
 using System.Linq;
@@ -9,8 +8,8 @@ namespace DonorSystem.Controllers
 {
     public class PatientController
     {
-        private PatientsDAO patientsDAO;
-        private DonorsDAO donorsDAO;
+        readonly PatientsDAO patientsDAO;
+        readonly DonorsDAO donorsDAO;
 
         /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.Controllers.PatientController" /> class and encapsulates the logic for the patient role.</summary>
         public PatientController()

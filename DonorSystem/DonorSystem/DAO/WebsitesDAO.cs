@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using DonorSystem.Models;
 using System.Linq;
 
@@ -8,7 +7,7 @@ namespace DonorSystem.DAO
 {
     public class WebsitesDAO
     {
-        private DonorDBContext context;
+        readonly DonorDBContext context;
 
         /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.DAO.WebsitesDAO" /> class which controls the Websites table in the database.</summary>
         public WebsitesDAO()

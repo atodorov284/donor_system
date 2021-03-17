@@ -57,7 +57,7 @@ namespace DonorSystem.Tests
             PatientController patientController = new PatientController();
             Patient patient = new Patient
             {
-                PatientId = 1,
+                PatientId = 5,
                 Name = "Test Patient",
                 Email = "test.patient@abv.bg",
                 Password = "btWDPPNShuv4Zit7WUnw10K77D8=",
@@ -67,7 +67,7 @@ namespace DonorSystem.Tests
             };
             int numberOfDonors = 5;
             bool result = true;
-            List<int> ids = new List<int>() { 39, 40 };
+            List<int> ids = new List<int>() { 3, 4 };
 
             //Act
             List<Donor> donors = patientController.GetPotentialDonors(patient, numberOfDonors);

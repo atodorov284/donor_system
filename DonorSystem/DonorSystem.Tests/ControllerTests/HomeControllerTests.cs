@@ -29,7 +29,7 @@ namespace DonorSystem.Tests
             string password = "123456";
             Donor expected = new Donor
             {
-                DonorId = 37,
+                DonorId = 1,
                 Name = "Petur Stoqnov",
                 Email = "petur.stoqnov@abv.bg",
                 Password = "btWDPPNShuv4Zit7WUnw10K77D8=",
@@ -57,7 +57,7 @@ namespace DonorSystem.Tests
             string password = "123456";
             Patient expected = new Patient
             {
-                PatientId = 13,
+                PatientId = 1,
                 Name = "Dimitur Dimitrov",
                 Email = "dimitur.dimitrov@abv.bg",
                 Password = "btWDPPNShuv4Zit7WUnw10K77D8=",

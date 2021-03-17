@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using DonorSystem.DAO;
 using DonorSystem.Models;
@@ -8,7 +7,7 @@ namespace DonorSystem.Controllers
 {
     public class DonorController
     {
-        DonorsDAO donorsDAO;
+        readonly DonorsDAO donorsDAO;
 
         /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.Controllers.DonorController" /> class and encapsulates the logic for the donor role.</summary>
         public DonorController()

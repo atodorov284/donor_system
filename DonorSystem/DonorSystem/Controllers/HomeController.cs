@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using System.Linq;
@@ -11,8 +10,8 @@ namespace DonorSystem.Controllers
 {
     public class HomeController
     {
-        private HomeDAO homeDAO;
-        private WebsitesDAO websitesDAO;
+        readonly HomeDAO homeDAO;
+        readonly WebsitesDAO websitesDAO;
 
         /// <summary>Initializes a new instance of the <see cref="T:DonorSystem.Controllers.HomeController" /> class and encapsulates the logic of the program.</summary>
         public HomeController()
@@ -75,8 +74,8 @@ namespace DonorSystem.Controllers
         /// <param name="password">The password.</param>
         /// <param name="name">The name.</param>
         /// <param name="phoneNumber">The phone number.</param>
-        /// <param name="status">The status.</param>
         /// <param name="bloodGroup">The blood group.</param>
+        /// <param name="diagnose">The diagnose.</param>
         /// <returns>
         ///   <c>true</c> if register is successful, <c>false</c> otherwise.</returns>
         public bool RegisterAsPatient(string email, string password, string name, string phoneNumber, string bloodGroup, string diagnose)
@@ -107,7 +106,7 @@ namespace DonorSystem.Controllers
 
         /// <summary>Calls <see cref="homeDAO"/> to see if the email already exists based on the role.</summary>
         /// <param name="email">The email.</param>
-        /// <param name="isDonor">The role</param>
+        /// <param name="role">The role</param>
         /// <returns>
         ///   <c>true</c> if exists, <c>false</c> otherwise.</returns>
         public bool EmailAlreadyExists(string email, int role)
