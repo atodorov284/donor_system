@@ -42,7 +42,7 @@ namespace DonorSystem.Views
                     numberOfDonors = 15;
                     Console.WriteLine(e.Message);
                 }
-            } while (numberOfDonors >= 15);
+            } while (numberOfDonors >= 15 || numberOfDonors <= 0);
 
             List<Donor> potentialDonors = patientController.GetPotentialDonors(patient, numberOfDonors);
             Console.WriteLine($"Here are all the donors compatible with your blood group {patient.BloodGroup} and their phone numbers.");
